@@ -1,0 +1,45 @@
+*{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+body{
+	font-size: 14px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.container{
+	margin: 50px auto;
+    width: 400px;
+    height: 200px;
+    padding: 30px;
+    border-radius: 7px;
+    box-shadow: inset 0px 0px 800px #0c0c0c;
+    opacity: 1;
+    color: white;
+}
+.main{
+	background:#c2d284 url(images/brokenClouds.jpg) center;
+	background-blend-mode: multiply;
+	background-size: cover;  
+	height: 100vh;
+}
+.h1{
+	font-weight: 100;
+	text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 20px;
+}
+#temperature{
+	color: navajowhite;
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
+}
+#desc{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 24px;
+}

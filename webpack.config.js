@@ -1,6 +1,7 @@
-let path=require('path');
+const path=require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports={
-  entry:"./js/main.js",
+  entry:"./js/mainApp.js",
   output:{
       path: path.join(__dirname,'build'),
       filename:'bundle.js'
@@ -27,12 +28,19 @@ module.exports={
                 test :/\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
+            },
+            {
+                test:/\.css$/,
+                loader:ExtractTextPlugin.extract('style-loader','css-loader'),
+                exclude:/node_modules/
             }
         ]
     },
     devServer:{
-            contentBase: path.resolve(__dirname,'bundle'),
+            contentBase: path.resolve(__dirname,'build'),
             inline: true,
+            watch: true,
             port : 4000
-    }
+    },
+    plugins:[new ExtractTextPlugin("bundle.css") ]
 };

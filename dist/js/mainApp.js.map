@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../js/mainApp.js"],"names":["a","b","console","log"],"mappings":";;AAAA;;IAAYA,C;;AACZ;;IAAYC,C;;;;AAEZC,QAAQC,GAAR,CAAY,+BAAZ","file":"mainApp.js","sourcesContent":["import * as a from \"../main.css\";\r\nimport * as b from \"./main.js\";\r\n\r\nconsole.log(\"modules imported successfully\");"]}

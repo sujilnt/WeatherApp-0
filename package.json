@@ -1,7 +1,7 @@
 {
   "name": "weatherapp",
   "version": "1.0.0",
-  "description": "this is a wether app project created in the bootcamp of freeCode Camp",
+  "description": "this is a weather app project created in the bootcamp of freeCode Camp",
   "main": "index.js",
   "scripts": {
     "server": "webpack ",
@@ -21,6 +21,6 @@
     "eslint": "^4.4.1",
     "eslint-loader": "^1.9.0",
     "webpack": "^1.15.0",
-    "webpack-dev-server": "^2.7.1"
+    "webpack-dev-server": "^1.14.0"
   }
 }

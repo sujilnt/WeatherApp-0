@@ -1,8 +1,9 @@
-let mainId=document.getElementById("card");
-let mainDes=document.getElementById("desc");
-let temperatuere=document.getElementById("temperature");
-let mainIcon=document.getElementById("iconDesc");
-
+const mainId=document.getElementById("card");
+const mainDes=document.getElementById("desc");
+const temperatuere=document.getElementById("temperature");
+const mainIcon=document.getElementById("iconDesc");
+const temperatureContainer=document.getElementById("temperatureContainer");
+const unit=document.getElementById("measurement");
 
 const currentLocation=function(){
 	 if (navigator.geolocation) {
@@ -20,7 +21,7 @@ const CallingApi=function(latitude,longitude){
 .catch((error)=> console.log("error",error));
 };
 
-let appendingData= function (data){
+const appendingData= function (data){
 	let weabtherObj=data.weather[0];
 	let iconUrl=weabtherObj.icon;
  	mainDes.innerHTML =weabtherObj.description;
@@ -30,3 +31,18 @@ let appendingData= function (data){
  	console.log(mainIcon);
     console.log("waether value",data.weather, weabtherObj.icon);
 };
+
+
+temperatureContainer.addEventListener('click', ()=>{
+    let convertedtemp=0;
+    const convertC=unit.innerHTML==='C';
+   if(convertC){
+       convertedtemp= ((temperatuere.innerHTML*9)/5)+32;
+       temperatuere.innerHTML=Math.round((convertedtemp*10)/10);
+        unit.innerHTML='F';
+   }else{
+       convertedtemp= ((temperatuere.innerHTML-32)*5)/9;
+       temperatuere.innerHTML=Math.round((convertedtemp*10)/10);
+       unit.innerHTML='C';
+   }
+});

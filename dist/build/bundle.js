@@ -54,7 +54,7 @@
 
 	var a = _interopRequireWildcard(_main);
 
-	var _main2 = __webpack_require__(5);
+	var _main2 = __webpack_require__(6);
 
 	var b = _interopRequireWildcard(_main2);
 
@@ -79,11 +79,12 @@
 
 	// removed by extract-text-webpack-plugin
 
-	/***/},,,,
+	/***/},,,,,
 /* 2 */
 /* 3 */
 /* 4 */
 /* 5 */
+/* 6 */
 /***/function (module, exports) {
 
 	"use strict";
@@ -92,6 +93,8 @@
 	var mainDes = document.getElementById("desc");
 	var temperatuere = document.getElementById("temperature");
 	var mainIcon = document.getElementById("iconDesc");
+	var temperatureContainer = document.getElementById("temperatureContainer");
+	var unit = document.getElementById("measurement");
 
 	var currentLocation = function currentLocation() {
 		if (navigator.geolocation) {
@@ -124,6 +127,20 @@
 		console.log(mainIcon);
 		console.log("waether value", data.weather, weabtherObj.icon);
 	};
+
+	temperatureContainer.addEventListener('click', function () {
+		var convertedtemp = 0;
+		var convertC = unit.innerHTML === 'C';
+		if (convertC) {
+			convertedtemp = temperatuere.innerHTML * 9 / 5 + 32;
+			temperatuere.innerHTML = Math.round(convertedtemp * 10 / 10);
+			unit.innerHTML = 'F';
+		} else {
+			convertedtemp = (temperatuere.innerHTML - 32) * 5 / 9;
+			temperatuere.innerHTML = Math.round(convertedtemp * 10 / 10);
+			unit.innerHTML = 'C';
+		}
+	});
 
 	/***/
 }]
